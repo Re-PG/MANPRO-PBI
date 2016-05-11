@@ -30,6 +30,9 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body id="app-layout">
     {{-- <nav class="navbar navbar-default navbar-static-top">
@@ -114,10 +117,10 @@
                         <a class="page-scroll" href="{{ route('home') }}">{!! Lang::get('home.kontak') !!}</a>
                     </li>
                     <li>
-                      <a class="navbar-brand page-scroll" href="#page-top"><img src="/img/Flag_of_Indonesia.svg.png" width="30px" id="logo_bendera"></a>
+                      <a class="navbar-brand page-scroll" href="" id='indo'><img src="/img/Flag_of_Indonesia.svg.png" width="30px" id="logo_bendera"></a>
                     </li>
                     <li>
-                        <a class="navbar-brand page-scroll" href="#page-top"><img src="/img/uk-flag.jpg" width="30px" height="20px" id="logo_bendera"></a>
+                        <a class="navbar-brand page-scroll" href="" id='engl'><img src="/img/uk-flag.jpg" width="30px" height="20px" id="logo_bendera"></a>
                     </li>
                 </ul>
             </div>

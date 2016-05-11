@@ -6,6 +6,12 @@
     color: #000000;
   }
 </style>
+<script type="text/javascript">
+
+  $("a[id='indo']").prop("href",  "/id/publikasi/{{ $pub->slug }}" );
+  $("a[id='engl']").prop("href",  "/en/publikasi/{{ $pub->slug}}" );
+
+</script>
 <div class="all-news">
       <section class="bg">
 
