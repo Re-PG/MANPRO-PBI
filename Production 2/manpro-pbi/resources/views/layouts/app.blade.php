@@ -151,47 +151,49 @@
         </div>
     </section> --}}
 
-    <footer class="page-footer" style="background-color: #F05F40">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 kiri">
-          <div class="row">
-            <div class="col s3">
-              <a href="/"><img alt="UKDW" class="logo-footer" src="/img/logo_ukdw.png"></a>
-            </div>
-          </div>
-          <h5>Need to get out of town? Jumpr is a service that connects riders to drivers with a similar goal - getting to their destination.</h5>
-        </div>
-        <div class="col-md-6 kanan nav_bawah">
-          <h5><strong>{!! Lang::get('home.title2') !!}</strong></h5>
-          <ul>
-            <li>
-                <a class="page-scroll" href="#page-top">{!! Lang::get('home.home') !!}</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#visi-misi">{!! Lang::get('home.visiMisi') !!}</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#lect-profile">{!! Lang::get('home.profil') !!}</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#program_pelatihan">{!! Lang::get('home.program') !!}</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#portfolio">{!! Lang::get('home.publikasi') !!}</a>
-            </li>
-            <li>
-                <a class="page-scroll" href="#contact">{!! Lang::get('home.kontak') !!}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <footer class="page-footer tambahan">
+		<div class="container">
+			<div class="row tambahan">
+				<div class="col-md-6 kiri col-lg-6 col-lg-offset-2" id="bagian-kiri">
+					<div class="row">
+						<div class="col s3" >
+							<a href="/"><img alt="UKDW" class="logo-footer" src="/img/logo_ukdw.png"></a>
+						</div>
+					</div>
+					<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h5>
+				</div>
+				<div class="col-md-6 kanan nav_bawah col-lg-6" id="bagian-kanan">
+					<h5>
+            <strong>{!! Lang::get('home.title2') !!}</strong>
+          </h5>
+					<ul>
+		              <li>
+		                  <a class="page-scroll" href="#page-top">{!! Lang::get('home.home') !!}</a>
+		              </li>
+		              <li>
+		                  <a class="page-scroll" href="#visi-misi">{!! Lang::get('home.visiMisi') !!}</a>
+		              </li>
+		              <li>
+		                  <a class="page-scroll" href="#lect-profile">{!! Lang::get('home.profil') !!}</a>
+		              </li>
+		              <li>
+		                  <a class="page-scroll" href="#program_pelatihan">{!! Lang::get('home.program') !!}</a>
+		              </li>
+		              <li>
+		                  <a class="page-scroll" href="#portfolio">{!! Lang::get('home.publikasi') !!}</a>
+		              </li>
+		              <li>
+		                  <a class="page-scroll" href="#contact">{!! Lang::get('home.kontak') !!}</a>
+		              </li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
-    </footer>
-    <div class="footer-copyright">
-      <div class="container kiri">© 2016 Re-PG.<span class="it_kanan">IT Project Management</span></div>
-    </div>
+	</footer>
+  <div class="footer-copyright bottom">
+    <div class="container it_kiri">© 2016 Re-PG.<span class="it_kanan">IT Project Management</span></div>
+  </div>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>

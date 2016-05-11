@@ -212,18 +212,7 @@ $(document).ready(function(){
     $(".btn_tambahPub").hide();
     $("#daftarPub").hide();
   });
-  //
-  // $("#publish").click(function(){
-  //   $("#article-content").hide();
-  //   $("#publish-content").show();
-  //   $("#user-content").hide();
-  // });
-  //
-  // $("#user").click(function(){
-  //   $("#article-content").hide();
-  //   $("#publish-content").hide();
-  //   $("#user-content").show();
-  // });
+
  });
 </script>
 

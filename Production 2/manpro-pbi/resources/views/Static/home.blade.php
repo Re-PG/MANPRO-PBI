@@ -399,7 +399,7 @@
     <footer class="page-footer tambahan">
 		<div class="container">
 			<div class="row tambahan">
-				<div class="col-md-6 kiri col-lg-4 col-lg-offset-2 text-center">
+				<div class="col-md-6 kiri col-lg-6 col-lg-offset-2" id="bagian-kiri">
 					<div class="row">
 						<div class="col s3" >
 							<a href="/"><img alt="UKDW" class="logo-footer" src="/img/logo_ukdw.png"></a>
@@ -407,10 +407,10 @@
 					</div>
 					<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h5>
 				</div>
-				<div class="col-md-6 kanan nav_bawah col-lg-4 text-center">
+				<div class="col-md-6 kanan nav_bawah col-lg-6" id="bagian-kanan">
 					<h5>
-            			<strong>{!! Lang::get('home.title2') !!}</strong>
-          			</h5>
+            <strong>{!! Lang::get('home.title2') !!}</strong>
+          </h5>
 					<ul>
 		              <li>
 		                  <a class="page-scroll" href="#page-top">{!! Lang::get('home.home') !!}</a>
@@ -434,10 +434,11 @@
 				</div>
 			</div>
 		</div>
-	  	<div class="footer-copyright bottom">
-    		<div class="container it_kiri">© 2016 Re-PG.<span class="it_kanan">IT Project Management</span></div>
-  		</div>
+
 	</footer>
+  <div class="footer-copyright bottom">
+    <div class="container it_kiri">© 2016 Re-PG.<span class="it_kanan">IT Project Management</span></div>
+  </div>
 
 
     <!-- jQuery -->

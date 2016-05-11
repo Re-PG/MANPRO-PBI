@@ -539,14 +539,12 @@ body {
     padding-left: 0%;
     padding-top: 0%;
 }
-.it_kiri{
+/*.it_kiri{
     padding left: 50%;
-}
+}*/
 .it_kanan{
-  /*display: inline;
-  float: right;*/
-  /*right: 0;*/
-  padding-left: 65%;
+  /*padding-left: 65%;*/
+  float: right;
 }
 
 /*.kiri{
@@ -563,9 +561,10 @@ footer, .kanan ul li a{
     list-style: none;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     padding-top: 2%;
+    margin-left: -9%;
 }
 .nav_bawah h5{
-    padding-left: 7%;
+    /*padding-left: 7%;*/
 }
 .logo-footer{
     width: 35%;
@@ -575,16 +574,13 @@ footer, .kanan ul li a{
 }
 .footer-copyright{
     background-color: #E15B3E;
-    padding-bottom: 0%;
-
-
+    /*position: static;*/
 }
 .footer-copyright .container{
     padding-top: 1%;
     padding-bottom: 1%;
 }
-.hidden{
-}
+
 footer{
     height: 45%;
 }
@@ -601,10 +597,10 @@ footer .container h5{
     background-color: #f05f40;
 
 }
-.bottom{
+/*.bottom{
     margin-top: 0%;
     padding-top: 5%;
-}
+}*/
 table tr td{
   padding-bottom: 5%;
   vertical-align: top;
@@ -634,6 +630,14 @@ table tr td{
 
 }
 
+@media (max-width: 991px) {
+  #bagian-kanan{
+    display: none;
+  }
+
+}
+
+
 #mainNav2{
   margin-top: 1%;
   border-radius: 0;
@@ -644,4 +648,12 @@ table tr td{
 #mainNav2 div ul li a{
   padding-top: 25%;
   padding-bottom: 0px;
+}
+
+#bagian-kiri{
+  margin-left: 0px;
+}
+#bagian-kanan{
+  padding-left: 10%;
+  margin-top: 3%;
 }
