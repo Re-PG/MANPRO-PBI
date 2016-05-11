@@ -117,6 +117,17 @@
         <!-- /.container-fluid -->
     </nav>
 
+    <nav id="mainNav2" class="navbar navbar-default">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right" >
+              <li>
+                  <a class="page-scroll" href="#">Logout</a>
+              </li>
+
+          </ul>
+      </div>
+    </nav>
+
     <header id="welcome">
         <div class="header-content">
             <div class="header-content-inner">

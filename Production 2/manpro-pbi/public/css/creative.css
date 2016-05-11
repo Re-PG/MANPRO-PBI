@@ -625,3 +625,15 @@ table tr td{
   }
 
 }
+
+#mainNav2{
+  margin-top: 1%;
+  border-radius: 0;
+  border-style: hidden;
+  background-color: #222222;
+  margin-bottom: 0;
+}
+#mainNav2 div ul li a{
+  padding-top: 25%;
+  padding-bottom: 0px;
+}
