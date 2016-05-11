@@ -92,7 +92,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- <a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo-01.png" width="250px" style="margin-top: -50px"></a> -->
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="/img/header.png" width="30px" id="logo_header">{!! Lang::get('publication.shorttitle') !!}</a>
+                <a class="navbar-brand page-scroll" href="{{route('home')}}"><img src="/img/header.png" width="30px" id="logo_header">{!! Lang::get('publication.shorttitle') !!}</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -160,7 +160,11 @@
 							<a href="/"><img alt="UKDW" class="logo-footer" src="/img/logo_ukdw.png"></a>
 						</div>
 					</div>
-					<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h5>
+          <h5>Jl. Dr. Wahidin Sudiro Husodo No. 5 – 25 Yogyakarta 55224
+              <br>
+              Telp. 0274 – 563929 Fax. 0274 – 513235
+              <br>
+              Email: humas@staff.ukdw.ac.id</h5>
 				</div>
 				<div class="col-md-6 kanan nav_bawah col-lg-6" id="bagian-kanan">
 					<h5>
@@ -168,22 +172,22 @@
           </h5>
 					<ul>
 		              <li>
-		                  <a class="page-scroll" href="#page-top">{!! Lang::get('home.home') !!}</a>
+		                  <a class="page-scroll" href="{{route('home')}}">{!! Lang::get('home.home') !!}</a>
 		              </li>
 		              <li>
-		                  <a class="page-scroll" href="#visi-misi">{!! Lang::get('home.visiMisi') !!}</a>
+		                  <a class="page-scroll" href="{{route('home')}}">{!! Lang::get('home.visiMisi') !!}</a>
 		              </li>
 		              <li>
-		                  <a class="page-scroll" href="#lect-profile">{!! Lang::get('home.profil') !!}</a>
+		                  <a class="page-scroll" href="{{route('home')}}">{!! Lang::get('home.profil') !!}</a>
 		              </li>
 		              <li>
-		                  <a class="page-scroll" href="#program_pelatihan">{!! Lang::get('home.program') !!}</a>
+		                  <a class="page-scroll" href="{{route('home')}}">{!! Lang::get('home.program') !!}</a>
 		              </li>
 		              <li>
-		                  <a class="page-scroll" href="#portfolio">{!! Lang::get('home.publikasi') !!}</a>
+		                  <a class="page-scroll" href="{{route('home')}}">{!! Lang::get('home.publikasi') !!}</a>
 		              </li>
 		              <li>
-		                  <a class="page-scroll" href="#contact">{!! Lang::get('home.kontak') !!}</a>
+		                  <a class="page-scroll" href="{{route('home')}}">{!! Lang::get('home.kontak') !!}</a>
 		              </li>
 					</ul>
 				</div>

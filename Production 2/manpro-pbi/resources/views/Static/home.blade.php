@@ -80,7 +80,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- <a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo-01.png" width="250px" style="margin-top: -50px"></a> -->
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="/img/header.png" width="30px" id="logo_header">{!! Lang::get('home.shorttitle') !!}</a>
+                <a class="navbar-brand page-scroll" href="{{route('home')}}"><img src="/img/header.png" width="30px" id="logo_header">{!! Lang::get('home.shorttitle') !!}</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -229,21 +229,11 @@
                       <div id="wrapper" style="height: 50%; width: 120% ; margin-left: -10%">
                         <div class="slider-wrapper theme-default">
                             <div id="slidder" class="nivoSlider">
-                                <a href="">
-                                  <img src="/img/IECC.jpg" alt="" title="Intensive English Conversation Class TOEFL"/>
+                              @foreach($program as $prog)
+                                <a href="{!! route('show_program', $prog->id)!!}">
+                                  <img src="{{ asset('/uploads/img/program/'.$prog->image) }}" alt="" title="{{$prog->judul}}"/>
                                 </a>
-
-                                <a href="">
-                                  <img src="/img/Culture_Event.jpg" alt="" title="Culture_Event">
-                                </a>
-
-                                <a href="">
-                                  <img src="/img/ICE.jpg" alt="" title="Introduction to College English"/>
-                                </a>
-
-                                <a href="English Corner">
-                                  <img src="/img/English_Corner.jpg" alt="" title="English Corner Program">
-                                </a>
+                              @endforeach
                             </div>
                             <div id="htmlcaption" class="nivo-html-caption">
                             </div>
@@ -405,7 +395,11 @@
 							<a href="/"><img alt="UKDW" class="logo-footer" src="/img/logo_ukdw.png"></a>
 						</div>
 					</div>
-					<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h5>
+					<h5>Jl. Dr. Wahidin Sudiro Husodo No. 5 – 25 Yogyakarta 55224
+              <br>
+              Telp. 0274 – 563929 Fax. 0274 – 513235
+              <br>
+              Email: humas@staff.ukdw.ac.id</h5>
 				</div>
 				<div class="col-md-6 kanan nav_bawah col-lg-6" id="bagian-kanan">
 					<h5>

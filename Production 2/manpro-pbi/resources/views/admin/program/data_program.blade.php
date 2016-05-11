@@ -68,6 +68,11 @@
                           <td>
                             <img src="{{ asset('/uploads/img/program/'.$program->image) }}" alt="" class="fotodosen"/>
                           </td>
+
+                          <td>
+                            <a href="{!! route('show_program', $program->id ) !!}" class="btn btn-success" role="button">Preview</a>
+                          </td>
+
                           <td>
                             <a href="{!! route('edit_program', $program->id ) !!}" class="btn btn-success" role="button">Edit</a>
                             <a href="{!! route('delete_program', $program->id )!!}" class="btn btn-danger" role="button">Hapus</a>
