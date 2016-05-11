@@ -536,14 +536,14 @@ body {
 }
 
 .kanan{
-    padding-left: 2%;
-    padding-top: 3%;
+    padding-left: 0%;
+    padding-top: 0%;
 }
 .it_kanan{
   /*display: inline;
   float: right;*/
   /*right: 0;*/
-  padding-left: 75%;
+  padding-left: 65%;
 }
 
 /*.kiri{
@@ -573,10 +573,14 @@ footer, .kanan ul li a{
 .footer-copyright{
     background-color: #E15B3E;
     padding-bottom: 0%;
+
+
 }
 .footer-copyright .container{
     padding-top: 1%;
     padding-bottom: 1%;
+}
+.hidden{
 }
 footer{
     height: 45%;
@@ -590,7 +594,9 @@ footer .container h5{
     width: 100px;
     height: 100px;
 }
-
+.tambahan{
+    background-color: #f05f40;
+}
 table tr td{
   padding-bottom: 5%;
   vertical-align: top;

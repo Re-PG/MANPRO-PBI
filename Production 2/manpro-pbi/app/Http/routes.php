@@ -21,10 +21,14 @@ Route::get('/home', [
 ]);
 //Route::get('/home{section}','HomeController@index');
 
-/*
-  Langua
-*/
-Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
+// /*
+//   Language
+// */
+// Route::get('/lang/{locale}', [
+//   'as'=>'lang_switch',
+//   'uses'=>'LanguageController@switchLanguage'
+// ]);
+
 /*
   admins routes and it's derivative
 */
@@ -91,11 +95,11 @@ Route::get('/admin/logout', [
   publications download and public routes
 */
 
-Route::get('/publication',[
+Route::get('/publikasi',[
   'uses' => 'PublicationController@index',
   'as' => 'home_publikasi'
 ]);
-Route::get('/publication/{slug}',[
+Route::get('/publikasi/{slug}',[
   'uses' => 'PublicationController@show',
   'as' => 'show_publikasi'
 ]);
