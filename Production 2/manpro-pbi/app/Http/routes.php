@@ -32,8 +32,8 @@ Route::get('/home', [
 /*
   admins routes and it's derivative
 */
-Route::get ('/admin', 'AdminController@index');
-Route::get ('/admin/general', 'AdminController@index');
+Route::get ('/admin', 'AdminController@getDataProgram');
+// Route::get ('/admin/general', 'AdminController@index');
   //routes for publikasi
   Route::get('/admin/publikasi',[
     'uses' => 'AdminController@getDataPublikasi',
@@ -53,11 +53,11 @@ Route::get ('/admin/general', 'AdminController@index');
   ]);
   Route::get('/admin/publikasi/delete/{id}', [
     'uses' => 'AdminController@deletePublikasi',
-    'as' => 'delete_dosen'
+    'as' => 'delete_publikasi'
   ]);
   Route::post('/admin/publikasi/destroy/{id}', [
     'uses' => 'AdminController@destroyPublikasi',
-    'as' => 'destroy_dosen'
+    'as' => 'destroy_publikasi'
   ]);
 
   //routes for data dosen
@@ -86,7 +86,33 @@ Route::get ('/admin/general', 'AdminController@index');
     'as' => 'destroy_dosen'
   ]);
 
-Route::get('/admin/logout', [
+  //routes for program
+  Route::get('/admin/program', [
+    'uses' => 'AdminController@getDataProgram',
+    'as' => 'data_program'
+  ]);
+  Route::get('/admin/program/edit/{id}', [
+    'uses' => 'AdminController@editProgram',
+    'as' => 'edit_Program'
+  ]);
+  Route::get('/admin/program/delete/{id}', [
+    'uses' => 'AdminController@deleteProgram',
+    'as' => 'delete_Program'
+  ]);
+  Route::post('/admin/program/update/{id}', [
+    'uses' => 'AdminController@updateProgram',
+    'as' => 'update_Program'
+  ]);
+  Route::post('/admin/program/add', [
+    'uses' => 'AdminController@tambahProgram',
+    'as' => 'tambah_Program'
+  ]);
+  Route::post('/admin/program/destroy/{id}', [
+    'uses' => 'AdminController@destroyProgram',
+    'as' => 'destroy_Program'
+  ]);
+
+  Route::get('/admin/logout', [
   'uses' => 'AdminController@getLogout',
   'as' => 'admin.logout'
 ]);
@@ -94,7 +120,6 @@ Route::get('/admin/logout', [
 /*
   publications download and public routes
 */
-
 Route::get('/publikasi',[
   'uses' => 'PublicationController@index',
   'as' => 'home_publikasi'
@@ -108,6 +133,13 @@ Route::get('/download/publikasi/{slug}',[
   'as' => 'download_publikasi'
 ]);
 
+/*
+  route untuk program
+*/
+Route::get('/program/{id}',[
+  'uses' => 'ProgramController@show',
+  'as' => 'show_program'
+]);
 
 /*
   Authentications

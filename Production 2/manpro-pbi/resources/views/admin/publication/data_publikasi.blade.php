@@ -77,7 +77,7 @@
                           <td>
                             <img src="
                             @if(!strcmp($Publication->imgMime , 'no image') )
-                                {{ asset('/img/placeholder.png') }}
+                                {{ asset('/img/document_placeholder.png') }}
                             @else
                                 {{ asset('/uploads/img/publikasi/'.$Publication->slug.'.'.$Publication->imgMime)}}
                             @endif" alt="" class="fotodosen"/>
@@ -208,6 +208,9 @@ $(document).ready(function(){
   $("#form_tambahPub").hide();
 
   $(".btn_tambahPub").click(function(){
+    @if(Session::has('success'))
+      $("#sukses").hide();
+    @endif
     $("#form_tambahPub").show();
     $(".btn_tambahPub").hide();
     $("#daftarPub").hide();
@@ -215,5 +218,13 @@ $(document).ready(function(){
 
  });
 </script>
+
+@if($errors->any())
+  <script type="text/javascript">
+  $("#form_tambahPub").show();
+  $(".btn_tambahPub").hide();
+  $("#daftarPub").hide();
+  </script>
+@endif
 
 @endsection

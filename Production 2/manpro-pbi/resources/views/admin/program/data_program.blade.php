@@ -11,12 +11,12 @@
 <div id="article-content">
   <nav class="navbar-inverse">
        <div class="container">
-          <h1 class="glyphicon glyphicon-duplicate"> Data Dosen </h1>
+          <h1 class="glyphicon glyphicon-duplicate"> Data Program </h1>
       <br/><br/>
        </div>
   </nav>
   @if(Session::has('success'))
-    <div class="alert alert-success" id='sukses'>
+    <div class="alert alert-success">
         <h2>{!! Session::get('success') !!}</h2>
     </div>
   @endif
@@ -43,38 +43,30 @@
       <div class="container-fluid">
           <div class="row">
             <div class="col-md-10" >
-                <div class="panel panel-default" id="daftarDos">
-                    <div class="panel-heading">Daftar Dosen</div>
+                <div class="panel panel-default" id="daftarProg">
+                    <div class="panel-heading">Daftar Program</div>
                     <div class="panel-body">
                       <table class="table">
-                        @foreach($data as $datadosen)
+                        @foreach($data as $program)
 
                         <tr>
 
-                          <th>Nama Dosen</th>
-                          <th>Jabatan</th>
-                          <th>Profile</th>
+                          <th>Judul Program</th>
+                          <th>Deskripsi</th>
                           <th>Foto</th>
+                          <th>Akses</th>
                           <th></th>
                         </tr>
                         <tr>
                           <td>
-                            {{$datadosen->nama}}
+                            {{$program->judul}}
                           </td>
                           <td>
-                            {{$datadosen->jabatan}}
-                          </td>
-                          <td>
-                            {{ str_limit($datadosen->profile,50, ' ...') }}
+                            {{$program->deskripsi}}
                           </td>
 
                           <td>
-                            <img src="
-                            @if(!strcmp($datadosen->image , 'no image'))
-                                {{ asset('/img/placeholder.png') }}
-                            @else
-                                {{ asset('/uploads/img/dosen/'.$datadosen->image)}}
-                            @endif" alt="" class="fotodosen"/>
+                            <img src="{{ asset('/uploads/img/program/'.$program->image) }}" alt="" class="fotodosen"/>
                           </td>
                           <td>
                             <a href="{!! route('edit_dosen', $datadosen->id ) !!}" class="btn btn-success" role="button">Edit</a>
@@ -87,28 +79,21 @@
                       </table>
                     </div>
                   </div>
-
-                  <div class="btn_tambahDos">
-                    <a href="#" class="btn btn-success" role="button">Tambah Dosen</a>
+                  <div class="btn_tambahProg">
+                    <a href="#" class="btn btn-success" role="button">Tambah Program</a>
                   </div>
-
-
-                      <div class="col-md-10" id="form_tambahDos">
+                      <div class="col-md-10" id= "form_tambahProg">
                           <div class="panel panel-default">
-                            <div class="panel-heading">Tambah Dosen</div>
+                            <div class="panel-heading">Tambah Program</div>
                               <div class="panel-body">
                                 <div class="col-sm-8">
 
                                 {!! Form::open(['route' => 'tambah_dosen', 'files' => 'true']) !!}
                                 <div class="form-group">
-                                    {!! Form::label('nama', 'Nama:', ['class' => 'control-label']) !!}
+                                    {!! Form::label('judul', 'Nama:', ['class' => 'control-label']) !!}
                                     {!! Form::text('nama', null, ['class' => 'form-control']) !!}
                                 </div>
 
-                                <div class="form-group">
-                                    {!! Form::label('jabatan', 'Jabatan:', ['class' => 'control-label']) !!}
-                                    {!! Form::text('jabatan', null, ['class' => 'form-control']) !!}
-                                </div>
                                 <div class="form-group">
                                     {!! Form::label('profile', 'Profile:', ['class' => 'control-label']) !!}
                                     {!! Form::textarea('profile', null, ['class' => 'form-control']) !!}
@@ -148,15 +133,15 @@ $(document).ready(function(){
     $("#wrapper").toggleClass("toggled");
   });
 
-  $("#form_tambahDos").hide();
+    $("#form_tambahProg").hide();
 
-  $(".btn_tambahDos").click(function(){
+  $(".btn_tambahProg").click(function(){
     @if(Session::has('success'))
       $("#sukses").hide();
     @endif
-    $("#form_tambahDos").show();
-    $(".btn_tambahDos").hide();
-    $("#daftarDos").hide();
+    $("#form_tambahProg").show();
+    $(".btn_tambahProg").hide();
+    $("#daftarProg").hide();
   });
 
  });
@@ -164,9 +149,9 @@ $(document).ready(function(){
 
 @if($errors->any())
   <script type="text/javascript">
-  $("#form_tambahDos").show();
-  $(".btn_tambahDos").hide();
-  $("#daftarDos").hide();
+  $("#form_tambahProg").show();
+  $(".btn_tambahProg").hide();
+  $("#daftarProg").hide();
   </script>
 @endif
 

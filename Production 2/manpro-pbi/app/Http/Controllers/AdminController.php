@@ -9,6 +9,7 @@ use Carbon\carbon;
 use App\Publication;
 use App\DataDosen;
 use App\Author;
+use App\Program;
 use Input;
 use Validator;
 use Session;
@@ -24,9 +25,9 @@ class AdminController extends Controller
     $this->middleware('auth');
   }
 
-  public function index(){
-    return view('admin.general');
-  }
+  // public function index(){
+  //   return view('admin.general');
+  // }
 
   public function getDataPublikasi(){
     $data = Publication::all();
@@ -41,6 +42,14 @@ class AdminController extends Controller
   public function deletePublikasi($id){
     $data = Publication::findOrFail($id);
     return view('admin.publication.delete_publikasi')->withData($data);
+  }
+
+  public function destroyPublikasi($id)
+  {
+    $data = Publication::findOrFail($id);
+    $data->delete();
+    Session::flash('success', 'Data Telah Dihapus');
+    return redirect( route('data_publikasi'));
   }
 
   public function tambahPublikasi(Request $request)
@@ -292,12 +301,6 @@ class AdminController extends Controller
     return redirect( route('data_dosen'));
   }
 
-  //this is test function
-  public function FunctionName()
-  {
-    return Carbon::now();
-  }
-
   public function tambahDosen(Request $request){
     $noimage = false;
     if($request->hasFile('image')){
@@ -356,6 +359,111 @@ class AdminController extends Controller
     Session::flash('success', 'Data Telah Dihapus');
     return redirect( route('data_dosen'));
   }
+
+  // function for program
+
+  public function getDataProgram(){
+    $data = Program::all();
+    return view('admin.program.data_program')->with('data', $data);
+  }
+
+  public function editProgram($id){
+    $data = DataDosen::findOrFail($id);
+    return view('admin.program.edit_program')->withData($data);
+  }
+
+  public function updateProgram(Request $request, $id){
+    $data = Program::findOrFail($id);
+    $reqs = $request->all();
+
+
+    if(strcmp($reqs['changeImage'] , 'false')){
+      $rules = array(
+        'image' => 'required|image',
+        'judul' => 'required',
+        'deskripsi' => 'required'
+      );
+    }else{
+      $rules = array(
+        'image' => 'required|image',
+        'judul' => 'required',
+        'deskripsi' => 'required'
+      );
+      $noimage = true;
+    }
+    $this->validate($request, $rules);
+    if($noimage){
+
+    }else {
+      $oldfile = 'public/uploads/img/publikasi/'.$data->image;
+      if($request->file('image')->isValid()) {
+        $destinationPath = 'uploads\img\publikasi'; // upload path
+        $extension = $request-> file('image')->getClientOriginalExtension(); // getting image extension
+        $name = $request->input('nama');
+        $vowels = array('-', ':');
+        $time = str_replace($vowels, "", Carbon::now());
+        $fileName = $name.$time.'.'.$extension; // renameing image
+        $request->file('image')->move($destinationPath, $fileName);
+        $data['image'] = $fileName;
+      }else{
+        Session::flash('error', 'File yang diupload tidak valid!');
+        return redirect()->back();
+      }
+      //File::delete($oldfile);
+    }
+    $data['id'] = $id;
+    $data['judul'] = $reqs['judul'];
+    $data['deskripsi'] = $reqs['deskripsi'];
+
+    $data->save();
+    Session::flash('success', 'Data Updated');
+    return redirect( route('data_program'));
+  }
+
+  public function tambahProgram(Request $request){
+    $rules = array(
+      'image' => 'required|image',
+      'judul' => 'required',
+      'deskripsi' => 'required'
+    );
+
+    $this->validate($request, $rules);
+
+    $file = array('image' => $request-> file('image'));
+
+    $data = $request->all();
+    if ($request->file('image')->isValid()) {
+      $destinationPath = 'uploads\img\program'; // upload path
+      $extension = $request-> file('image')->getClientOriginalExtension(); // getting image extension
+      $name = $request->input('judul');
+      $vowels = array('-', ':', " ");
+      $time = str_replace($vowels, "", Carbon::now());
+      $fileName = $name.$time.'.'.$extension; // renameing image
+      $request->file('image')->move($destinationPath, $fileName);
+      $data['image'] = $fileName;
+    }else{
+      Session::flash('error', 'File yang diupload tidak valid!');
+      return redirect()->back();
+    }
+
+    Program::create($data);
+    Session::flash('success', 'Data Berhasil Ditambahkan');
+    return redirect()->back();
+  }
+
+  // public function deleteDosen($id)
+  // {
+  //   $data = DataDosen::findOrFail($id);
+  //   return view('admin.data_dosen.confirm_delete_dosen')->withData($data);
+  // }
+  //
+  // public function destroyDosen($id)
+  // {
+  //   $data = DataDosen::findOrFail($id);
+  //   $data->delete();
+  //   Session::flash('success', 'Data Telah Dihapus');
+  //   return redirect( route('data_dosen'));
+  // }
 
   public function getLogout(){
     auth()->guard()->logout();
