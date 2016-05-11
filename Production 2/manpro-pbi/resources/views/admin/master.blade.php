@@ -29,7 +29,7 @@
               </li>
       <br/><br/><br/>
               <li>
-                  <a href="/admin/general" id="article">Informasi Prodi</a>
+                  <a href="{{ route('data_program') }}" id="article">Program</a>
               </li>
               <li>
                   <a href="{{ route('data_publikasi') }}" id="publish">Publikasi</a>

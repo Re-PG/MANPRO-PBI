@@ -5,6 +5,9 @@
     background:#ffffff;
     color: #000000;
   }
+  .placholder{
+    width: 40%;
+  }
 </style>
 <script type="text/javascript">
 
@@ -19,7 +22,11 @@
         <div class="row hide-on-small-only valign-wrapper">
           <div class="col-md-6">
             <div class="mockup jarak-kiri">
-              <img class="responsive-img" src=" {{ asset('/uploads/img/publikasi/'.$pub->slug.'.'.$pub->imgMime) }}" style="width: 100%; height: 100%" alt="No Image">
+              @if(!strcmp($pub->imgMime, 'no image'))
+                <img class="responsive-img placholder" src=" {{ asset('img/document_placeholder.png') }}" style="width: 100%; height: 100%" alt="No Image">
+              @else
+                <img class="responsive-img" src=" {{ asset('/uploads/img/publikasi/'.$pub->slug.'.'.$pub->imgMime) }}" style="width: 100%; height: 100%" alt="No Image">
+              @endif
             </div>
           </div>
           <div><h1>Publikasi</h1></div>
