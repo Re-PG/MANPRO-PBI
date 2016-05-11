@@ -43,7 +43,7 @@
       <div class="container-fluid">
           <div class="row">
             <div class="col-md-10" >
-                <div class="panel panel-default">
+                <div class="panel panel-default" id="daftarDos">
                     <div class="panel-heading">Daftar Dosen</div>
                     <div class="panel-body">
                       <table class="table">
@@ -87,7 +87,13 @@
                       </table>
                     </div>
                   </div>
-                      <div class="col-md-10">
+
+                  <div class="btn_tambahDos">
+                    <a href="#" class="btn btn-success" role="button">Tambah Dosen</a>
+                  </div>
+
+
+                      <div class="col-md-10" id="form_tambahDos">
                           <div class="panel panel-default">
                             <div class="panel-heading">Tambah Dosen</div>
                               <div class="panel-body">
@@ -126,5 +132,32 @@
       </div>
   </div>
 </div>
+
+<!-- jQuery -->
+<script src={{asset('js/jquery.js')}}></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src={{asset('js/bootstrap.min.js')}}></script>
+
+<!-- Menu Toggle Script -->
+<script>
+
+$(document).ready(function(){
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+
+  $("#form_tambahDos").hide();
+
+  $(".btn_tambahDos").click(function(){
+    $("#form_tambahDos").show();
+    $(".btn_tambahDos").hide();
+    $("#daftarDos").hide();
+  });
+
+ });
+</script>
+
 
 @endsection
