@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('content')
 <div class="all-news">
+  <script type="text/javascript">
+
+    //alert("{!! Lang::get('publication.engl') !!}");
+    $("a[id='indo']").prop("href",  "/id/publikasi" );
+    $("a[id='engl']").prop("href",  "/en/publikasi" );
+
+  </script>
   <?php $ctr =0; ?>
   @foreach($pubs as $content)
     @if($ctr%2 == 0)
@@ -20,7 +27,7 @@
             <h2>{{$content->title}}</h2>
             <p>{{$content->shortDesc}}</p>
 
-              <a href=" {{url('/publication', $content->slug) }}" class="btn btn-default btn-xl wow tada col-xs-6 col-centered col-min">{{ Lang::get('publication.baca') }}</a>
+              <a href=" {{url('/publikasi', $content->slug) }}" class="btn btn-default btn-xl wow tada col-xs-6 col-centered col-min">{{ Lang::get('publication.baca') }}</a>
 
             </div>
 

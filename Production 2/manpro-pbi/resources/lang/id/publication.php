@@ -29,6 +29,7 @@ return [
     'selanjutnya'     => 'Selanjutnya',
     'join' =>'Mari Bergabung',
     'selengkapnya' => 'Lihat Selengkapnya',
+    'baca' => 'Lihat Detail',
 
     //section welcome
     'welcome'     => 'Selamat Datang',
