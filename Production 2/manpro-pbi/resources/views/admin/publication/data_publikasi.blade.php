@@ -36,7 +36,7 @@
       <div class="container-fluid">
           <div class="row">
             <div class="col-md-10" >
-                <div class="panel panel-default">
+                <div class="panel panel-default" id="daftarPub">
                     <div class="panel-heading">Daftar Publikasi</div>
                     <div class="panel-body">
                       <table class="table">
@@ -88,8 +88,8 @@
                           </td>
 
                           <td>
-                            <a href="{!! route('edit_publikasi', $Publication)!!}" class="btn btn-success" role="button">Edit</a>
-                            <a href="" class="btn btn-danger" role="button">Hapus</a>
+                            <a href="{!! route('edit_publikasi', $Publication)!!}" class="btn btn-success" role="button" style="width: 100px; margin-bottom: 2%">Edit</a>
+                            <a href="" class="btn btn-danger" role="button" style="width: 100px">Hapus</a>
                           </td>
 
                         </tr>
@@ -97,7 +97,11 @@
                       </table>
                     </div>
                   </div>
-                      <div class="col-md-10">
+                  <div class="btn_tambahPub">
+                    <a href="#" class="btn btn-success" role="button">Tambah Publikasi</a>
+                  </div>
+
+                      <div class="col-md-10" id="form_tambahPub">
                           <div class="panel panel-default">
                             <div class="panel-heading">Tambah Publikasi</div>
                               <div class="panel-body">
@@ -185,5 +189,42 @@
       </div>
   </div>
 </div>
+
+<!-- jQuery -->
+<script src={{asset('js/jquery.js')}}></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src={{asset('js/bootstrap.min.js')}}></script>
+
+<!-- Menu Toggle Script -->
+<script>
+
+$(document).ready(function(){
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+
+  $("#form_tambahPub").hide();
+
+  $(".btn_tambahPub").click(function(){
+    $("#form_tambahPub").show();
+    $(".btn_tambahPub").hide();
+    $("#daftarPub").hide();
+  });
+  //
+  // $("#publish").click(function(){
+  //   $("#article-content").hide();
+  //   $("#publish-content").show();
+  //   $("#user-content").hide();
+  // });
+  //
+  // $("#user").click(function(){
+  //   $("#article-content").hide();
+  //   $("#publish-content").hide();
+  //   $("#user-content").show();
+  // });
+ });
+</script>
 
 @endsection

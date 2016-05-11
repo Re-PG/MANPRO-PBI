@@ -27,7 +27,11 @@
             <h2>{{$content->title}}</h2>
             <p>{{$content->shortDesc}}</p>
 
-              <a href=" {{url('/publikasi', $content->slug) }}" class="btn btn-default btn-xl wow tada col-xs-6 col-centered col-min">{{ Lang::get('publication.baca') }}</a>
+              @if($ctr%2 == 0)
+                <a href=" {{url('/publikasi', $content->slug) }}" class="btn btn-default btn-xl wow tada col-xs-6 col-centered col-min">{{ Lang::get('publication.baca') }}</a>
+              @else
+               <a href=" {{url('/publikasi', $content->slug) }}" class="btn btn-primary btn-xl wow tada col-xs-6 col-centered col-min">{{ Lang::get('publication.baca') }}</a>
+              @endif
 
             </div>
 
