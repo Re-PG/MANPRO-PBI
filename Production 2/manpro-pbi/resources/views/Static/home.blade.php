@@ -385,7 +385,7 @@
     </section>
 
 
-    <footer class="page-footer" style="background-color: #F05F40;">
+    <footer class="page-footer tambahan">
 		<div class="container">
 			<div class="row tambahan">
 				<div class="col-md-6 kiri col-lg-4 col-lg-offset-2 text-center">
@@ -423,11 +423,9 @@
 				</div>
 			</div>
 		</div>
-
-  <div class="footer-copyright">
-    <div class="container">© 2016 Re-PG.<span class="it_kanan">IT Project Management</span></div>
-  </div>
-
+	  	<div class="footer-copyright bottom">
+    		<div class="container it_kiri">© 2016 Re-PG.<span class="it_kanan">IT Project Management</span></div>
+  		</div>
 	</footer>
 
 
