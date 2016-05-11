@@ -136,6 +136,8 @@
                     <hr class="light">
                     <p class="text-faded">{!! Lang::get('home.visi') !!}</p>
                     <p class="text-faded">{!! Lang::get('home.misi') !!}</p>
+                    <br>
+                    <!-- <hr class="light"> -->
                     <a href="#contact" class="page-scroll btn btn-default btn-xl">{!! Lang::get('home.join') !!}</a>
                 </div>
             </div>
@@ -198,14 +200,15 @@
                     </div>
                 </div> --}}
             </div>
-            <!-- <div class="container text-center" style="padding-top: 10%">
-                <a href="#" class="btn btn-primary btn-xl wow tada">See More</a>
-            </div> -->
+            <div class="container text-center" style="padding-top: 8%">
+              <hr class="primary">
+                <a href="#" class="btn btn-primary btn-xl wow tada">Lihat Selengkapnya</a>
+            </div>
             <!-- btn btn-default btn-xl wow tada -->
         </div>
     </section>
 
-    <section id="program_pelatihan" style="background-color: #EDEDED; height:120%">
+    <section id="program_pelatihan">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -245,7 +248,7 @@
         </div>
     </section>
 
-    <section class="no-padding bg-dark" id="portfolio" style="height: 150%">
+    <section class="no-padding bg-dark" id="portfolio">
     	<div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -364,7 +367,7 @@
     <section id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
+                <div class="col-lg-8 col-lg-offset-2 text-center" style="margin-top: 12%">
                     <h2 class="section-heading">{!! Lang::get('home.kontak') !!}</h2>
                     <hr class="primary">
                     <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>

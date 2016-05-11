@@ -243,6 +243,54 @@ header .header-content .header-content-inner p {
         max-width: 80%;
         font-size: 18px;
     }
+
+
+    /*section #visi-misi{
+      height: auto;
+    }
+    section #program_pelatihan{
+      height: auto;
+    }*/
+}
+
+@media(min-width: 400px) {
+  #lect-profile{
+    height: auto;
+  }
+
+  #contact{
+    height: auto;
+  }
+  #program_pelatihan{
+    background-color: #EDEDED;
+    height:auto;
+  }
+  #portfolio{
+    height: auto;
+  }
+  #visi-misi{
+    height: auto;
+  }
+}
+@media (min-width: 300px) {
+  #lect-profile{
+    height: auto;
+  }
+
+  #contact{
+    height: auto;
+  }
+  #program_pelatihan{
+    background-color: #EDEDED;
+    height:auto;
+  }
+  #portfolio{
+    height: auto;
+  }
+  #visi-misi{
+    height: auto;
+  }
+
 }
 
 .section-heading {
@@ -492,8 +540,16 @@ body {
     padding-top: 3%;
 }
 .it_kanan{
-    padding-left: 75%;
+  /*display: inline;
+  float: right;*/
+  /*right: 0;*/
+  padding-left: 75%;
 }
+
+/*.kiri{
+  display: inline;
+  float: left;
+}*/
 
 footer, .kanan ul li a{
     color: #FFFFFF;
@@ -542,4 +598,24 @@ table tr td{
 #btn-publish{
   padding-top: 5%;
   text-align: right;
+}
+@media (min-width: 1275px) {
+  #lect-profile{
+    height: 130%;
+  }
+
+  #contact{
+    height: 100%;
+  }
+  #program_pelatihan{
+    background-color: #EDEDED;
+    height:120%;
+  }
+  #portfolio{
+    height: 150%;
+  }
+  #visi-misi{
+    height: 100%;
+  }
+
 }
