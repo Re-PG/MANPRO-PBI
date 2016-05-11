@@ -41,7 +41,7 @@ class AdminController extends Controller
 
   public function deletePublikasi($id){
     $data = Publication::findOrFail($id);
-    return view('admin.publication.delete_publikasi')->withData($data);
+    return view('admin.publication.confirm_delete_publikasi')->withData($data);
   }
 
   public function destroyPublikasi($id)
@@ -368,7 +368,7 @@ class AdminController extends Controller
   }
 
   public function editProgram($id){
-    $data = DataDosen::findOrFail($id);
+    $data = Program::findOrFail($id);
     return view('admin.program.edit_program')->withData($data);
   }
 
@@ -376,7 +376,7 @@ class AdminController extends Controller
     $data = Program::findOrFail($id);
     $reqs = $request->all();
 
-
+    $noimage = false;
     if(strcmp($reqs['changeImage'] , 'false')){
       $rules = array(
         'image' => 'required|image',
@@ -385,7 +385,6 @@ class AdminController extends Controller
       );
     }else{
       $rules = array(
-        'image' => 'required|image',
         'judul' => 'required',
         'deskripsi' => 'required'
       );
@@ -395,9 +394,9 @@ class AdminController extends Controller
     if($noimage){
 
     }else {
-      $oldfile = 'public/uploads/img/publikasi/'.$data->image;
+      $oldfile = 'public/uploads/img/program/'.$data->image;
       if($request->file('image')->isValid()) {
-        $destinationPath = 'uploads\img\publikasi'; // upload path
+        $destinationPath = 'uploads\img\program'; // upload path
         $extension = $request-> file('image')->getClientOriginalExtension(); // getting image extension
         $name = $request->input('nama');
         $vowels = array('-', ':');
@@ -411,6 +410,7 @@ class AdminController extends Controller
       }
       //File::delete($oldfile);
     }
+
     $data['id'] = $id;
     $data['judul'] = $reqs['judul'];
     $data['deskripsi'] = $reqs['deskripsi'];
@@ -451,19 +451,19 @@ class AdminController extends Controller
     return redirect()->back();
   }
 
-  // public function deleteDosen($id)
-  // {
-  //   $data = DataDosen::findOrFail($id);
-  //   return view('admin.data_dosen.confirm_delete_dosen')->withData($data);
-  // }
-  //
-  // public function destroyDosen($id)
-  // {
-  //   $data = DataDosen::findOrFail($id);
-  //   $data->delete();
-  //   Session::flash('success', 'Data Telah Dihapus');
-  //   return redirect( route('data_dosen'));
-  // }
+  public function deleteProgram($id)
+  {
+    $data = Program::findOrFail($id);
+    return view('admin.program.confirm_delete_program')->withData($data);
+  }
+
+  public function destroyProgram($id)
+  {
+    $data = Program::findOrFail($id);
+    $data->delete();
+    Session::flash('success', 'Data Telah Dihapus');
+    return redirect( route('data_program'));
+  }
 
   public function getLogout(){
     auth()->guard()->logout();

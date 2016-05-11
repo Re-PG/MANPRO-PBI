@@ -16,7 +16,7 @@
        </div>
   </nav>
   @if(Session::has('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" id='sukses'>
         <h2>{!! Session::get('success') !!}</h2>
     </div>
   @endif
@@ -69,8 +69,8 @@
                             <img src="{{ asset('/uploads/img/program/'.$program->image) }}" alt="" class="fotodosen"/>
                           </td>
                           <td>
-                            <a href="{!! route('edit_dosen', $datadosen->id ) !!}" class="btn btn-success" role="button">Edit</a>
-                            <a href="{!! route('delete_dosen', $datadosen->id )!!}" class="btn btn-danger" role="button">Hapus</a>
+                            <a href="{!! route('edit_program', $program->id ) !!}" class="btn btn-success" role="button">Edit</a>
+                            <a href="{!! route('delete_program', $program->id )!!}" class="btn btn-danger" role="button">Hapus</a>
                           </td>
 
 
@@ -88,19 +88,19 @@
                               <div class="panel-body">
                                 <div class="col-sm-8">
 
-                                {!! Form::open(['route' => 'tambah_dosen', 'files' => 'true']) !!}
+                                {!! Form::open(['route' => 'tambah_program', 'files' => 'true']) !!}
                                 <div class="form-group">
-                                    {!! Form::label('judul', 'Nama:', ['class' => 'control-label']) !!}
-                                    {!! Form::text('nama', null, ['class' => 'form-control']) !!}
+                                    {!! Form::label('judul', 'Judul:', ['class' => 'control-label']) !!}
+                                    {!! Form::text('judul', null, ['class' => 'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::label('profile', 'Profile:', ['class' => 'control-label']) !!}
-                                    {!! Form::textarea('profile', null, ['class' => 'form-control']) !!}
+                                    {!! Form::label('deskripsi', 'Deskripsi:', ['class' => 'control-label']) !!}
+                                    {!! Form::textarea('deskripsi', null, ['class' => 'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    {!! Form::label('image', 'Image: (Max Size 1 MB)', ['class' => 'control-label']) !!}
+                                    {!! Form::label('image', 'Image: (Max Size 5 MB)', ['class' => 'control-label']) !!}
                                     {!! Form::file('image') !!}
                                 </div>
 

@@ -93,23 +93,23 @@ Route::get ('/admin', 'AdminController@getDataProgram');
   ]);
   Route::get('/admin/program/edit/{id}', [
     'uses' => 'AdminController@editProgram',
-    'as' => 'edit_Program'
+    'as' => 'edit_program'
   ]);
   Route::get('/admin/program/delete/{id}', [
     'uses' => 'AdminController@deleteProgram',
-    'as' => 'delete_Program'
+    'as' => 'delete_program'
   ]);
   Route::post('/admin/program/update/{id}', [
     'uses' => 'AdminController@updateProgram',
-    'as' => 'update_Program'
+    'as' => 'update_program'
   ]);
   Route::post('/admin/program/add', [
     'uses' => 'AdminController@tambahProgram',
-    'as' => 'tambah_Program'
+    'as' => 'tambah_program'
   ]);
   Route::post('/admin/program/destroy/{id}', [
     'uses' => 'AdminController@destroyProgram',
-    'as' => 'destroy_Program'
+    'as' => 'destroy_program'
   ]);
 
   Route::get('/admin/logout', [

@@ -117,7 +117,7 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <nav id="mainNav2" class="navbar navbar-default">
+    {{-- <nav id="mainNav2" class="navbar navbar-default">
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right" >
               <li>
@@ -126,7 +126,7 @@
 
           </ul>
       </div>
-    </nav>
+    </nav> --}}
 
     <header id="welcome">
         <div class="header-content">

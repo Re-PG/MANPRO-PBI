@@ -16,7 +16,7 @@
        </div>
   </nav>
   @if(Session::has('success'))
-    <div class="alert-box success">
+    <div class="alert-box success" id= 'sukses'>
         <h2>{!! Session::get('success') !!}</h2>
     </div>
   @endif
@@ -88,8 +88,8 @@
                           </td>
 
                           <td>
-                            <a href="{!! route('edit_publikasi', $Publication)!!}" class="btn btn-success" role="button" style="width: 100px; margin-bottom: 2%">Edit</a>
-                            <a href="" class="btn btn-danger" role="button" style="width: 100px">Hapus</a>
+                            <a href="{!! route('edit_publikasi', $Publication->id)!!}" class="btn btn-success" role="button" style="width: 100px; margin-bottom: 2%">Edit</a>
+                            <a href="{!! route('delete_publikasi', $Publication->id)!!}" class="btn btn-danger" role="button" style="width: 100px">Hapus</a>
                           </td>
 
                         </tr>
